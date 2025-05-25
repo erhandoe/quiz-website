@@ -12,6 +12,22 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        orbitron: ["Orbitron", "sans-serif"],
+        chakra: ["Chakra Petch", "sans-serif"],
+      },
+      animation: {
+        gradient: "cyber 20s ease infinite",
+      },
+      keyframes: {
+        cyber: {
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+        },
+      },
+      backgroundSize: {
+        "400": "400% 400%",
+      },
     },
   },
   plugins: [],
