@@ -16,6 +16,18 @@ type Quiz = {
   completedAt?: string;
 };
 
+type Topic = {
+  id: number;
+  name: string;
+  proficiency: "Beginner" | "Intermediate" | "Advanced";
+};
+
+type PuzzleInfo = {
+  title: string;
+  difficulty: "Easy" | "Medium" | "Hard";
+  hint: string;
+};
+
 type Props = {
   user: { name: string; image: string };
   completed: Quiz[];
@@ -34,11 +46,13 @@ export default function DashboardLayoutWrapper({
     { id: 2, title: "Complete 3 Hard quizzes", progress: 30 },
   ];
   const progressPercent = 65;
-  const topics = [
+
+  const topics: Topic[] = [
     { id: 1, name: "Crypto", proficiency: "Intermediate" },
     { id: 2, name: "Web", proficiency: "Beginner" },
     { id: 3, name: "Forensics", proficiency: "Advanced" },
   ];
+
   const notes = [
     {
       id: 1,
@@ -47,7 +61,7 @@ export default function DashboardLayoutWrapper({
     },
     { id: 2, title: "Web Bug", snippet: "XSS on user input field..." },
   ];
-  const dailyPuzzle = {
+  const dailyPuzzle: PuzzleInfo = {
     title: "Cipher Maze",
     difficulty: "Medium",
     hint: "Look for repeating patterns",
