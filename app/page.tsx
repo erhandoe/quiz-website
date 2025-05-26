@@ -1,7 +1,6 @@
 "use server";
 
 import { auth } from "@/auth";
-import { redirect } from "next/navigation";
 import { StartButton } from "./components/StartButton";
 
 export default async function Home() {
