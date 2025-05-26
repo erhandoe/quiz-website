@@ -1,4 +1,14 @@
-export default function Dashboard() {
+"use server";
+
+import { auth } from "@/auth";
+
+export default async function Home() {
+  const session = await auth();
+
+  if (session?.user) {
+    return;
+  }
+
   return (
     <div className="flex justify-center m-10 flex-col font-chakra">
       <div className="flex justify-center p-3 flex-col text-center font-orbitron z-10">
