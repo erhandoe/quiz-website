@@ -2,7 +2,11 @@
 
 import { logVar } from "../lib/actions/auth";
 
-export function LoginButton({ s }) {
+export type LoginS = {
+  s: string;
+};
+
+export function LoginButton({ s }: LoginS) {
   return (
     <button className={"font-bold text-xl text-white"} onClick={() => logVar()}>
       {s}
