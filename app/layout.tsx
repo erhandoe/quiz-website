@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className="
-        pt-2 min-h-screen text-white
+        pt-2 pb-4 min-h-screen text-white
         inset-0
         bg-gradient-to-r from-[#000000] via-[#1f0036] to-[#0a0a0a]
         bg-[length:400%_400%] animate-gradient opacity-80 bg-size-400 font-chakra
