@@ -19,7 +19,7 @@ export const logVar = async () => {
   }
 };
 
-export const logString = async () => {
+export const logString = async (): Promise<string> => {
   const session = await auth();
   if (session?.user) {
     return "Logout";

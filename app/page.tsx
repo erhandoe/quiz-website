@@ -2,9 +2,32 @@
 
 import { auth } from "@/auth";
 import { StartButton } from "./components/StartButton";
+import FeatureSection from "./components/FeatureSection";
+import LeaderboardPreview from "./components/LeaderboardPreview";
 
 export default async function Home() {
   const session = await auth();
+  const dummyUsers = [
+    {
+      id: 1,
+      name: "NeoGhost",
+      points: 980,
+      avatarUrl: "https://api.dicebear.com/9.x/identicon/png?seed=NeoGhost",
+    },
+    {
+      id: 2,
+      name: "CircuitHunter",
+      points: 910,
+      avatarUrl:
+        "https://api.dicebear.com/9.x/identicon/png?seed=CircuitHunter",
+    },
+    {
+      id: 3,
+      name: "ByteWitch",
+      points: 870,
+      avatarUrl: "https://api.dicebear.com/9.x/identicon/png?seed=ByteWitch",
+    },
+  ];
 
   if (session?.user) {
     return (
@@ -18,8 +41,8 @@ export default async function Home() {
           </p>
         </div>
         <StartButton />
-
-        <div id="features"></div>
+        <FeatureSection />
+        <LeaderboardPreview users={dummyUsers} />
       </div>
     );
   }
@@ -35,8 +58,8 @@ export default async function Home() {
         </p>
       </div>
       <StartButton />
-
-      <div id="features"></div>
+      <FeatureSection />
+      <LeaderboardPreview users={dummyUsers} />
     </div>
   );
 }
